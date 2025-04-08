@@ -1,0 +1,8 @@
+FEATURES
+-Ability to add students, name(One field), date for addition to club, year of the student, list of club students can be apart of.
+-Ability to search for a student name and get the clubs they are apart of.
+-Ability to click the list of clubs and see the students that are apart of it.
+-Ability for the admin of the database to promote the students year number 1 to 2, 2 to 3, and 3 to old student.
+-Ability for admin to clear the hole database (don't know why I added that just wanted to use it as a base to test the next 2 features).
+-Ability for admin to clear the 1st, 2nd, 3rd and old students and specific students exclusively.
+-Ability for admin to clear a specific student from a specific club.

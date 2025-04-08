@@ -1,0 +1,27 @@
+-Separate the pages(form page, searching page, promotion page, removal or clearing page, and maybe a homepage if needed)
+-Styling the pages
+    >>Display fixes
+    >>Coloring
+    >>After effects and animations
+    >>>Use specific styling from client if possible
+-Directory
+-Add auto refresh after clearing(wouldn't be that useful after Directories are fixed)
+-Make it possible for a specified database on a to be turned into a file(excel or Access)👍
+-Make to possible for a specified students list of clubs and date on entry to be turned in a file(excel or Access)👍
+-To choose multiple clubs on mobile you can tap and hold(Need testing)
+-Make it possible to add more items to the list of clubs and create a button with the same club name and button name with a onclick="showStudentsByClub('new Club Name')".
+
+
+..Random Notices or Bugs That Might Could Mismanagement of the database
+//If there're students registered with the same name in different years they're treated one person when clearing the database
+AFFECT: //Information loss on students
+
+PREVENTION: //Students should always use full names and not nicknames
+            //(From our point of develops we'll try to create something to make it impossible for two people to have the same name...)
+
+//When removing a specific student from a specific club mistyping may cause errors
+AFFECT: //When the student name is typed wrongly it may by some chance affect other student database
+        //Errors or inability to recognize clubs
+
+PREVENTION: //Check spelling and Capitalization 
+            //Spell checker
