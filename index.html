@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Club Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Student Club Registration</h1>
+    <form id="studentForm">
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" required>
+
+        <label for="year">Year:</label>
+        <select id="year" required>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+        </select>
+
+        <label for="clubs">Select Clubs (hold Ctrl or Cmd to select multiple):</label>
+        <select id="clubs" class="club-list" multiple required>
+            <option value="">-- Select a Club --</option>
+            <option value="Art Club" class="club-item">Art Club</option>
+            <option value="Science Club" class="club-item">Science Club</option>
+            <option value="Music Club" class="club-item">Music Club</option>
+            <option value="Sports Club" class="club-item">Sports Club</option>
+        </select>
+
+        <button type="submit">Add Student</button>
+    </form>
+
+    <hr>
+    <h2>Search Student or Club</h2>
+    <input type="text" id="searchInput" placeholder="Search by Student Name or Club">
+    <button onclick="search()">Search</button>
+
+    <h3>Clubs</h3>
+    <div id="clubButtons">
+        <button onclick="showStudentsByClub('Art Club')">Art Club</button>
+        <button onclick="showStudentsByClub('Science Club')">Science Club</button>
+        <button onclick="showStudentsByClub('Music Club')">Music Club</button>
+        <button onclick="showStudentsByClub('Sports Club')">Sports Club</button>
+    </div>
+
+    <div id="searchResults"></div>
+    <div id="clubResults"></div>
+
+    <hr>
+    <button onclick="promoteStudents()">Promote Students to Next Year</button>
+
+    <hr>
+<button onclick="clearDatabase()">Clear Database</button>
+
+<hr>
+<button onclick="clearYearGroup('1')">Clear 1st Year Students</button>
+<button onclick="clearYearGroup('2')">Clear 2nd Year Students</button>
+<button onclick="clearYearGroup('3')">Clear 3rd Year Students</button>
+<button onclick="clearOldStudents()">Clear Old Students</button>
+
+<!-- To clear individual student by name -->
+<input type="text" id="clearStudentName" placeholder="Enter student name to clear">
+<button onclick="clearIndividualStudent(document.getElementById('clearStudentName').value)">Clear Student</button>
+
+<hr>
+<h3>Remove Student from Club</h3>
+<input type="text" id="removeStudentName" placeholder="Enter student name">
+<input type="text" id="removeClubName" placeholder="Enter club name">
+<button onclick="removeStudentFromClub(
+    document.getElementById('removeStudentName').value,
+    document.getElementById('removeClubName').value
+)">Remove Student from Club</button>
+
+<hr>
+<h2>Export Data</h2>
+    <!-- Export Specific Student -->
+    <h3>Export Specific Student's Data</h3>
+    <input type="text" id="studentExportName" placeholder="Enter Student Name">
+    <button id="exportStudentButton">Export Student to Excel</button>
+
+    <!-- Export Specific Club -->
+    <h3>Export Specific Club's Data</h3>
+    <input type="text" id="clubExportName" placeholder="Enter Club Name">
+    <button id="exportClubButton">Export Club to Excel</button>
+
+
+
+
+    <script src="app.js"></script>
+    <!--Excel Library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+</body>
+</html>
+
