@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Clubs List</title>
+    <script>
+        // This function will show students associated with a club
+        function showStudentsByClub(clubName) {
+            alert("Displaying students for " + clubName);
+            // Add your logic here to display students of the selected club
+        }
+
+        // This function will add a new club and update both select and buttons
+        function addNewClub() {
+            const clubName = document.getElementById("clubInput").value;
+            if (clubName) {
+                // Add to the select dropdown
+
+                const selectElement = document.querySelector(".clubs");
+                const newOption = document.createElement("option");
+                newOption.textContent = clubName;
+                newOption.value = clubName;
+                selectElement.appendChild(newOption);
+
+                // Add to the club buttons
+                const clubButtonsDiv = document.querySelector(".clubButtons");
+                const clubButton = document.createElement("button");
+                clubButton.textContent = clubName;
+                clubButton.onclick = function() {
+                    showStudentsByClub(clubName);
+                };
+                clubButtonsDiv.appendChild(clubButton);
+
+                // Clear the input field after adding the club
+                document.getElementById("clubInput").value = "";
+            } else {
+                alert("Please enter a club name.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Club List</h1>
+    
+    <!-- Input and button to add new club -->
+    <input type="text" id="clubInput" placeholder="Enter new club name">
+    <button onclick="addNewClub()">Add Club</button>
+
+    <h2>Select Club:</h2>
+    <!-- Existing select dropdown with class 'clubs' -->
+    <select class="clubs">
+        <option value="">-- Select a Club --</option>
+        <!-- Existing clubs would be here -->
+    </select>
+
+    <h2>Existing Clubs:</h2>
+    <!-- Existing div with class 'clubButtons' where club buttons will be added -->
+    <div class="clubButtons">
+        <!-- New club buttons will be added here -->
+    </div>
+</body>
+</html>
